@@ -3,3 +3,13 @@
   dconf:
     key: "/apps/update-manager/check-new-release-ignore"
     value: "'impish'"
+- name: set 'first-run'
+  become_user: "{{user}}"
+  dconf:
+    key: "/apps/update-manager/first-run"
+    value: "false"
+- name: set 'launch-count'
+  become_user: "{{user}}"
+  dconf:
+    key: "/apps/update-manager/launch-count"
+    value: "1"
