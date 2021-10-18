@@ -1,4 +1,5 @@
 - name: set 'check-new-release-ignore'
+  become_user: "{{user}}"
   dconf:
     key: "/apps/update-manager/check-new-release-ignore"
     value: "'impish'"
