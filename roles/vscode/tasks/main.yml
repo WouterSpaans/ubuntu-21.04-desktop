@@ -4,9 +4,9 @@
     classic: yes
 
 - name: install vscode extention dotnettools
-  become_user: { { become_user } }
+  become_user: "{{ become_user }}"
   shell: code --install-extension ms-dotnettools.csharp
 
 - name: install vscode extention solution explorer
-  become_user: { { become_user } }
+  become_user: "{{ become_user }}"
   shell: code --install-extension fernandoescolar.vscode-solution-explorer
