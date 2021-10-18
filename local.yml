@@ -3,6 +3,7 @@
   connection: local
   become: true
   roles:
+    - role: python3
     - role: remove-initial-setup
       vars:
         user: "wouter"
