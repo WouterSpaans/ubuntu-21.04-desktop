@@ -2,6 +2,20 @@
 - hosts: localhost
   connection: local
   become: true
+
+  tasks:
+    - name: install packages
+      package:
+        state: present
+        name:
+          - open-vm-tools-desktop
+          - gnome-software
+    - name: remove packages
+      package:
+        state: absent
+        name:
+          - byobu
+
   roles:
     - role: python3
     - role: remove-initial-setup
