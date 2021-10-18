@@ -1,0 +1,16 @@
+- name: Remove "gnome-initial-setup" package
+  apt:
+    name: gnome-initial-setup
+    state: absent
+
+- name: set 'report-technical-problems'
+  become_user: wouter
+  dconf:
+    key: "/org/gnome/desktop/privacy/report-technical-problems"
+    value: "true"
+
+- name: set 'location'
+  become_user: wouter
+  dconf:
+    key: "/org/gnome/system/location/enabled"
+    value: "false"
