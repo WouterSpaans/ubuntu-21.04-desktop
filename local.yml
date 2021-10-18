@@ -3,7 +3,12 @@
   connection: local
   become: true
   roles:
-    - dotnet-sdk-5.0
+    - role: adm-users
+      vars:
+        user: "wouter"
+        password: "$6$i2Tj/l3o5rH2XQDr$EXbxoUdukY4x8mjR2OUz4f53lU9EGk6xh9fvJomNZllsgIjJyrFkFoT2Lq2k3qsPiDea9jOZ7ZMDP1w3MjJ8p/"
+        fullname: "Wouter Spaans"
+    - role: dotnet-sdk-5.0
     - role: vscode
       vars:
         become_user: "vagrant"
