@@ -1,0 +1,19 @@
+- name: Wait for unlocking /var/lib/dpkg/lock
+  become: true
+  shell: while sudo fuser /var/lib/dpkg/lock >/dev/null 2>&1; do sleep 5; done;
+
+- name: download ms product repository
+  get_url:
+    url: https://packages.microsoft.com/config/ubuntu/21.04/packages-microsoft-prod.deb
+    dest: /tmp/packages-microsoft-prod.deb
+
+- name: install ms product repository
+  become: true
+  deb: /tmp/packages-microsoft-prod.deb
+
+- name: Install .NET Core SDK
+  become: true
+  apt:
+    name: dotnet-sdk-5.0
+    state: present
+    update_cache: yes

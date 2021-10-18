@@ -1,0 +1,12 @@
+- name: install vscode
+  community.general.snap:
+    name: code
+    classic: yes
+
+- name: install vscode extention dotnettools
+  become_user: wouter
+  shell: code --install-extension ms-dotnettools.csharp
+
+- name: install vscode extention solution explorer
+  become_user: wouter
+  shell: code --install-extension fernandoescolar.vscode-solution-explorer
