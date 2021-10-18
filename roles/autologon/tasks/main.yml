@@ -1,0 +1,17 @@
+- name: Enable auto logon AutomaticLoginEnable
+  lineinfile:
+    path: /etc/gdm3/custom.conf
+    regexp: "^#  AutomaticLoginEnable = true"
+    line: "  AutomaticLoginEnable = true"
+    owner: root
+    group: root
+    mode: "0644"
+
+- name: Enable auto logon AutomaticLogin
+  lineinfile:
+    path: /etc/gdm3/custom.conf
+    regexp: "^#  AutomaticLogin = user1"
+    line: "  AutomaticLogin = {{user}}"
+    owner: root
+    group: root
+    mode: "0644"
