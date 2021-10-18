@@ -4,3 +4,4 @@
   become: true
   roles:
     - dotnet-sdk-5.0
+    - vscode
