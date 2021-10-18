@@ -1,0 +1,4 @@
+- name: set 'check-new-release-ignore'
+  dconf:
+    key: "/apps/update-manager/check-new-release-ignore"
+    value: "'impish'"

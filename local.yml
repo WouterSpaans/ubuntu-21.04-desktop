@@ -3,6 +3,8 @@
   connection: local
   become: true
   roles:
+    - role: remove-initial-setup
+    - role: disable-upgrade
     - role: adm-users
       vars:
         user: "wouter"
@@ -14,4 +16,4 @@
     - role: dotnet-sdk-5.0
     - role: vscode
       vars:
-        become_user: "vagrant"
+        become_user: "wouter"
