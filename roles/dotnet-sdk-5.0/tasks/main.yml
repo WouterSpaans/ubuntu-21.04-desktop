@@ -9,7 +9,8 @@
 
 - name: install ms product repository
   become: true
-  deb: /tmp/packages-microsoft-prod.deb
+  apt:
+    deb: /tmp/packages-microsoft-prod.deb
 
 - name: Install .NET Core SDK
   become: true
