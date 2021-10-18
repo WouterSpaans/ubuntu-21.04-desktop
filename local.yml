@@ -4,4 +4,6 @@
   become: true
   roles:
     - dotnet-sdk-5.0
-    - vscode
+    - role: vscode
+      vars:
+        become_user: "vagrant"
